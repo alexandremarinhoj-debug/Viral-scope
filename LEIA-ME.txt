@@ -1,0 +1,27 @@
+ViralScope — arquivos iniciais do backend
+
+Arquivos:
+- app.py: servidor Flask e endpoints da YouTube Data API
+- requirements.txt: dependências Python
+- .python-version: fixa Python 3.13
+
+IMPORTANTE:
+1. Envie estes três arquivos para a raiz do repositório Viral-scope.
+2. Não apague nem substitua index.html ou README.txt.
+3. A chave da API deve ficar somente nas variáveis de ambiente do Render:
+   YOUTUBE_API_KEY
+4. Depois de enviar os arquivos, configure no Render:
+   Build Command: pip install -r requirements.txt
+   Start Command: gunicorn app:app
+
+Endpoints iniciais:
+- /api/health
+- /api/search?q=termo
+- /api/channel?q=@handle ou /api/channel?id=ID
+- /api/keywords?q=termo
+
+Limitações honestas:
+- A YouTube Data API não fornece CTR, impressões, retenção, volume real de buscas
+  nem métricas privadas de canais concorrentes.
+- Os termos relacionados são extraídos dos títulos retornados pela API, não são
+  volume de pesquisa nem dificuldade oficial.
